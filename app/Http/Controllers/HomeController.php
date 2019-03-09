@@ -30,7 +30,7 @@ class HomeController extends Controller
         $user = \Auth::user();
 
         $users = User::orderBy('created_at', 'desc')
-            ->paginate(2) ;
+            ->paginate(10) ;
 
 
         return view('home',
@@ -63,5 +63,14 @@ class HomeController extends Controller
 //Редирект н
         return redirect()->back();
 
+    }
+    public function ajax(Request $request)
+    {
+        $users = User::query();
+        $name = $request->get('name');
+        if($name){
+            $users->where('name','like','%'.$name.'%');
+        }
+        return response()->json($users->get()->toArray());
     }
 }

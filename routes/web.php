@@ -20,5 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/{id}', 'HomeController@userEdit')->name('users.edit');
 Route::post('/users/{id}', 'HomeController@userSave')->name('users.save');
+Route::get('/ajax', 'HomeController@ajax')->name('Ajax');
 
 
