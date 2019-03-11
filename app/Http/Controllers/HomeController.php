@@ -58,9 +58,9 @@ class HomeController extends Controller
         $user->name = $name;
         $user->email = $email;
         $user->save();
-//redirect home
+//redirect  на home
         return redirect(route('home'));
-//Редирект н
+//Редирект назат
 //       return redirect()->back();
 
     }
