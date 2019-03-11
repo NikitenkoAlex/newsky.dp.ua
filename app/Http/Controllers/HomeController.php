@@ -61,7 +61,7 @@ class HomeController extends Controller
 //redirect home
         return redirect(route('home'));
 //Редирект н
-        return redirect()->back();
+//       return redirect()->back();
 
     }
     public function ajax(Request $request)
