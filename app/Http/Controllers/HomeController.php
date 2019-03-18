@@ -59,7 +59,7 @@ class HomeController extends Controller
         $user->email = $email;
         $user->save();
 //redirect home
-        return redirect(route('home'));
+        return redirect(route('home'))->with('status','succesfully save!');
 //Редирект н
         return redirect()->back();
 
