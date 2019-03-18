@@ -16,23 +16,42 @@
 
                             Здравствуйте: <b>{{$name}}</b> ваш айпи {{ $ip}}
                         <br>
-                        <table class="table table-bordered">
+                        {{--<table class="table table-bordered">--}}
+                            {{--<tr>--}}
+                                {{--<td> id</td>--}}
+                                {{--<td> Имя</td>--}}
+                                {{--<td> Почта</td>--}}
+                                {{--<td> Дата регистрации</td>--}}
+                                {{--<td> Редактировать  </td>--}}
+                            {{--</tr>--}}
+                            {{--@foreach($users as $user)--}}
+                                {{--<tr>--}}
+                                    {{--<td> {{$user->id}} </td>--}}
+                                    {{--<td> {{$user->name}} </td>--}}
+                                    {{--<td> {{$user->email}} </td>--}}
+                                    {{--<td> {{$user->created_at}} </td>--}}
+                                    {{--<td>--}}
+                                        {{--<a href="{{route('users.save',['id'=>$user->id]) }}">Редактировать</a>--}}
+                                    {{--</td>--}}
+                                {{--</tr>--}}
+                            {{--@endforeach--}}
+                        {{--</table>--}}
+
+
+                            <table class="table table-bordered">
                             <tr>
                                 <td> id</td>
-                                <td> Имя</td>
-                                <td> Почта</td>
-                                <td> Дата регистрации</td>
-                                <td> Редактировать  </td>
+                                <td> price</td>
+                                <td> user_id</td>
+                                <td> created_at</td>
+
                             </tr>
-                            @foreach($users as $user)
+                            @foreach($orders as $user)
                                 <tr>
                                     <td> {{$user->id}} </td>
-                                    <td> {{$user->name}} </td>
-                                    <td> {{$user->email}} </td>
+                                    <td> {{$user->price}} </td>
+                                    <td> {{$user->user_id}} </td>
                                     <td> {{$user->created_at}} </td>
-                                    <td>
-                                        <a href="{{route('users.save',['id'=>$user->id]) }}">Редактировать</a>
-                                    </td>
                                 </tr>
                             @endforeach
                         </table>

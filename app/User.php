@@ -26,8 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
     public function present()
     {
-        return $this->name.' '.$this->email. ' register at'.$this->created_at;
+        return $this->name . ' ' . $this->email . ' register at' . $this->created_at;
     }
 }

@@ -17,8 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')
+     ->middleware('auth');
 Route::get('/users/{id}', 'HomeController@userEdit')->name('users.edit');
 Route::post('/users/{id}', 'HomeController@userSave')->name('users.save');
+
 
 

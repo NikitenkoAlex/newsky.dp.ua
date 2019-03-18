@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -32,12 +33,13 @@ class HomeController extends Controller
         $users = User::orderBy('created_at', 'desc')
             ->paginate(2) ;
 
-
+        $orders = Order::all();
         return view('home',
         [
             'ip' => $ip,
             'name' => $user->name,
-            'users' =>$users
+            'users' =>$users,
+            'orders' =>$orders
         ]);
     }
 
@@ -59,9 +61,9 @@ class HomeController extends Controller
         $user->email = $email;
         $user->save();
 //redirect home
-        return redirect(route('home'));
+        return redirect(route('home'))->with('status','succesfully save!');
 //Редирект н
-        return redirect()->back();
+//        return redirect()->back();
 
     }
 }
